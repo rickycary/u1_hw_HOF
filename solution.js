@@ -1,6 +1,12 @@
 // You must RETURN your result in each function!
 
 function printNums(nums) {
+  const newArr = []
+  nums.forEach((element) => {
+    newArr.push(element)
+  })
+  return newArr
+
   /**
    *  Using .forEach, add each number in the nums array to a new array.
    * @param nums => [1,2,3,4]
@@ -8,6 +14,12 @@ function printNums(nums) {
 }
 
 function returnSums(nums) {
+  const newArray = []
+  nums.forEach((element, index) => {
+    newArray.push(element + index)
+  })
+  return newArray
+
   /**
    * Using forEach, push the sum of n plus the index
    * to a new array and return the new array
@@ -16,6 +28,13 @@ function returnSums(nums) {
 }
 
 function returnTotal(objs) {
+  let numbers = 0
+  objs.forEach((element, index) => {
+    numbers = numbers + element.n
+  })
+  return numbers
+
+  //passed with and without index on line 32
   /**
    * Using forEach return a number that is the total sum of all numbers in the array of objects.
    * The key for each object will be n
@@ -24,6 +43,13 @@ function returnTotal(objs) {
 }
 
 function printMoney(decimals) {
+  const newArray = []
+  decimals.map((money) => {
+    newArray.push('$' + money.toFixed(2))
+  })
+
+  return newArray
+
   /**
    * @param decimals => [2.30, 2.40, 32.99]
    * Using .map, return an array of decimals formatted as dollars.
@@ -36,6 +62,10 @@ function printMoney(decimals) {
 }
 
 function returnAllTrueValues(values) {
+  return values.filter((argument) => {
+    return argument.happy
+  })
+
   /**
    * @param values => [{name: 'Joe', happy:false}]
    * Using .filter, return an array of objects where happy equals true
@@ -43,6 +73,10 @@ function returnAllTrueValues(values) {
 }
 
 function addTwo(nums) {
+  const sum = nums.reduce((accumulator, value) => {
+    return accumulator + (value + 2)
+  }, 0)
+  return sum
   /**
    * @param nums => [1,2,3,4]
    * Using .reduce, return the total sum of all numbers.
@@ -53,6 +87,10 @@ function addTwo(nums) {
 }
 
 function joinStrings(strings) {
+  const stringer = strings.reduce((accumulator, value) => {
+    return accumulator + value
+  })
+  return stringer
   /**
    * @param strings => ['g', 'f', 'z']
    * Using .reduce, return a new string containing each string from the strings array.
